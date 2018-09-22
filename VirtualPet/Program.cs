@@ -10,10 +10,10 @@ namespace VirtualPet
     {
         static void Main(string[] args)
         {
-            bool caredFor = true;
-            VirtualPet dog = new VirtualPet();
-            Console.WriteLine("What is your pet's name?");            
-            dog.Name = Console.ReadLine();
+            bool caredFor = true;            
+            Console.WriteLine("What is your pet's name?");
+            VirtualPet dog = new VirtualPet(Console.ReadLine());
+           
             Console.WriteLine();
             while (caredFor == true)
             {        
@@ -61,12 +61,7 @@ namespace VirtualPet
                         break;
                 }
 
-                if (dog.Hunger <= 0 || dog.Thirst <= 0)
-                {
-                    caredFor = false;
-                    Console.WriteLine("You've failed to take care of {0}. You've lost your pet privilages and {0} has been taken away from you.", dog.Name, dog.Name);
-                }
-                else if (dog.Affection <= 0)
+                if (dog.Hunger <= 0 || dog.Thirst <= 0 || dog.Affection <= 0 || dog.Exercise <= 0)
                 {
                     caredFor = false;
                     Console.WriteLine("{0} felt neglected and ran away to find a better home.", dog.Name);
