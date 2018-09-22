@@ -55,15 +55,21 @@ namespace VirtualPet
                         break;
                     case (5):
                         caredFor = false;
-                        Console.WriteLine("bye bye");
+                        Console.WriteLine("{0} is better without you anyway.",dog.Name);
                         break;
                     default:
                         break;
                 }
 
-                if (dog.Hunger == 0 || dog.Thirst == 0)
+                if (dog.Hunger <= 0 || dog.Thirst <= 0)
                 {
                     caredFor = false;
+                    Console.WriteLine("You've failed to take care of {0}. You've lost your pet privilages and {0} has been taken away from you.", dog.Name, dog.Name);
+                }
+                else if (dog.Affection <= 0)
+                {
+                    caredFor = false;
+                    Console.WriteLine("{0} felt neglected and ran away to find a better home.", dog.Name);
                 }
             }
         }

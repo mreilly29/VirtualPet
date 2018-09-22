@@ -56,16 +56,16 @@ namespace VirtualPet
         //METHODS
         public void Feed()
         {
-            Hunger += 5;
+            Hunger += 8;
             Thirst -= 3;
             Exercise -= 3;
-            Affection++;
+            Affection--;
             Console.WriteLine("You fed {0}.", Name);
             Console.WriteLine();
         }
         public void Drink()
         {
-            Thirst += 5;
+            Thirst += 10;
             exercise--;
             Affection--;
             Console.WriteLine("You gave {0} water.", Name);
@@ -73,27 +73,26 @@ namespace VirtualPet
         }       
         public void Walk()
         {
-            Exercise += 5;
+            Exercise += 10;
             Hunger--;
-            Thirst -= 5;
+            Thirst -= 4;
             Affection += 2;
             Console.WriteLine("You walked {0}.", Name);
             Console.WriteLine();
         }
         public void Cuddle()
         {
-            Affection += 6;
-            Exercise--;
+            Affection += 7;
             Console.WriteLine("You cuddled with {0}.", Name);
             Console.WriteLine();
         }
 
         public void Tick()
-        {
-            Hunger -=2;
-            Thirst --;            
-            Exercise--;
-            Affection--;
+        {        
+            Hunger -=2;          
+            Exercise -= 3;
+            Affection -= 2;
+            Thirst -= 1;
         }
     }
 }
