@@ -16,13 +16,16 @@ namespace VirtualPet
             dog.Name = Console.ReadLine();
             Console.WriteLine();
             while (caredFor == true)
-            {                
+            {        
+                //display pet's current status
                 Console.WriteLine("{0} the dog", dog.Name);
                 Console.WriteLine("Hunger: {0}", dog.Hunger);
                 Console.WriteLine("Thirst: {0}", dog.Thirst);
                 Console.WriteLine("Exercise: {0}", dog.Exercise);
                 Console.WriteLine("Affection: {0}", dog.Affection);
                 Console.WriteLine();
+
+                //displays options to interact with pet
                 Console.WriteLine("What would you like to do?");
                 Console.WriteLine("1. Feed {0}", dog.Name);
                 Console.WriteLine("2. Water {0}", dog.Name);
@@ -30,8 +33,12 @@ namespace VirtualPet
                 Console.WriteLine("4. Cuddle with {0}", dog.Name);
                 Console.WriteLine("5. Abandon {0}", dog.Name);
                 Console.WriteLine();
+                
+                //takes in user's selection
                 int input = int.Parse(Console.ReadLine());
                 dog.Tick();
+
+                //user's selection triggers an action
                 switch (input)
                 {
                     case (1):
@@ -48,6 +55,7 @@ namespace VirtualPet
                         break;
                     case (5):
                         caredFor = false;
+                        Console.WriteLine("bye bye");
                         break;
                     default:
                         break;
